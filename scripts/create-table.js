@@ -45,36 +45,28 @@ data = [
   },
 ];
 
-// function readJSON() {
-//   let fr = new FileReader();
-//   let jsonFile = new File([], "./data.json");
-//   console.log(jsonFile);
-
-//   fr.readAsText(jsonFile);
-
-//   fr.onload = function () {
-//     console.log(fr.result);
-//   };
-
-//   fr.onerror = function () {
-//     console.log(fr.error);
-//   };
-// }
-
-// readJSON();
-
 columns = Object.keys(data[0]);
+
+let tableContainer = document.getElementById("table-container");
+
+let table = document.createElement("table");
+table.id = "uniqueTable";
+table.className = "table table-bordered table-striped";
+tableContainer.appendChild(table);
 
 let thead = document.createElement("thead");
 let tr = document.createElement("tr");
-
 columns.forEach((item, i) => {
   let th = document.createElement("th");
   th.innerText = item;
+  tr.onclick = function () {
+    console.log(`Column ${i} clicked!`);
+    sortTable(i);
+  };
   tr.appendChild(th);
 });
-
 thead.appendChild(tr);
+table.appendChild(thead);
 
 let tbody = document.createElement("tbody");
 data.forEach((item) => {
@@ -88,12 +80,4 @@ data.forEach((item) => {
   });
   tbody.appendChild(tr);
 });
-
-let table = document.createElement("table");
-table.id = "uniqueTable";
-table.className = "table table-bordered table-striped";
-table.append(thead);
-table.append(tbody);
-
-let tableContainer = document.getElementById("table-container");
-tableContainer.appendChild(table);
+table.appendChild(tbody);
