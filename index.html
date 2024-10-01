@@ -9,12 +9,75 @@
   <body>
     <div class="container">
       <h1>Chemical supplies</h1>
+      <div id="toolbar" class="m-3 d-flex justify-content-end">
+        <button type="button" class="btn btn-sm btn-primary" id="add-btn">
+          Add
+        </button>
+        <button type="button" class="btn btn-sm">Move up</button>
+        <button type="button" class="btn btn-sm">Move down</button>
+      </div>
+      <div id="add-form" class="d-none">
+        <input
+          class="form-control form-control-sm m-1"
+          type="number"
+          placeholder="ID"
+        />
+        <input
+          class="form-control form-control-sm m-1"
+          type="string"
+          placeholder="Chemical Name"
+        />
+        <input
+          class="form-control form-control-sm m-1"
+          type="string"
+          placeholder="Vendor"
+        />
+        <input
+          class="form-control form-control-sm m-1"
+          type="number"
+          placeholder="Density"
+        />
+        <input
+          class="form-control form-control-sm m-1"
+          type="number"
+          placeholder="Viscocity"
+        />
+        <input
+          class="form-control form-control-sm m-1"
+          type="number"
+          placeholder="Packaging"
+        />
+        <input
+          class="form-control form-control-sm m-1"
+          type="number"
+          placeholder="Pack Size"
+        />
+        <input
+          class="form-control form-control-sm m-1"
+          type="string"
+          placeholder="Unit"
+        />
+        <input
+          class="form-control form-control-sm m-1"
+          type="number"
+          placeholder="Quantity"
+        />
+        <button
+          type="button"
+          class="btn btn-sm btn-primary mx-1 mt-1 mb-3"
+          id="add-done"
+        >
+          Done
+        </button>
+      </div>
       <div id="table-container" class="table-responsive"></div>
     </div>
 
     <script src="scripts/bootstrap.bundle.min.js"></script>
-    <script src="scripts/create-table.js"></script>
-    <script src="scripts/sort-table.js"></script>
-    <script src="scripts/edit-row.js"></script>
+    <!-- <script src="scripts/create-table.js"></script> -->
+    <!-- <script src="scripts/sort-table.js"></script> -->
+    <!-- <script src="scripts/edit-row.js"></script> -->
+    <!-- <script src="scripts/add-row.js"></script> -->
+    <script src="scripts/app.js"></script>
   </body>
 </html>
