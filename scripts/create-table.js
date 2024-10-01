@@ -56,15 +56,14 @@ tableContainer.appendChild(table);
 
 let thead = document.createElement("thead");
 let tr = document.createElement("tr");
-columns.forEach((item, i) => {
+columns.forEach((item) => {
   let th = document.createElement("th");
   th.innerText = item;
-  tr.onclick = function () {
-    console.log(`Column ${i} clicked!`);
-    sortTable(i);
-  };
   tr.appendChild(th);
 });
+let th = document.createElement("th");
+th.innerHTML = "Edit";
+tr.append(th);
 thead.appendChild(tr);
 table.appendChild(thead);
 
@@ -78,6 +77,9 @@ data.forEach((item) => {
     td.innerText = elem;
     tr.appendChild(td);
   });
+  let td = document.createElement("td");
+  td.innerHTML = "<button type='button' class='btn'>Edit</button>";
+  tr.append(td);
   tbody.appendChild(tr);
 });
 table.appendChild(tbody);
