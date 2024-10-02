@@ -10,11 +10,21 @@
     <div class="container">
       <h1>Chemical supplies</h1>
       <div id="toolbar" class="m-3 d-flex justify-content-end">
-        <button type="button" class="btn btn-sm btn-primary" id="add-btn">
-          Add
+        <button type="button" class="btn btn-sm" id="add-btn">
+          <img src="public/database-add.svg" />
         </button>
-        <button type="button" class="btn btn-sm">Move up</button>
-        <button type="button" class="btn btn-sm">Move down</button>
+        <button type="button" class="btn btn-sm">
+          <img src="public/arrow-up.svg" />
+        </button>
+        <button type="button" class="btn btn-sm">
+          <img src="public/arrow-down.svg" />
+        </button>
+        <button type="button" class="btn btn-sm" id="edit-btn">
+          <img src="public/pencil.svg" />
+        </button>
+        <button type="button" class="btn btn-sm">
+          <img src="public/trash.svg" />
+        </button>
       </div>
       <div id="add-form" class="d-none">
         <input
@@ -78,6 +88,11 @@
     <!-- <script src="scripts/sort-table.js"></script> -->
     <!-- <script src="scripts/edit-row.js"></script> -->
     <!-- <script src="scripts/add-row.js"></script> -->
-    <script src="scripts/app.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/createTable.js"></script>
+    <script src="scripts/selectRow.js"></script>
+    <script src="scripts/sortTable.js"></script>
+    <script src="scripts/editRow.js"></script>
+    <!-- <script src="scripts/app.js"></script> -->
   </body>
 </html>
