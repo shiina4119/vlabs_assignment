@@ -40,6 +40,7 @@ doneBtn.onclick = function () {
     }
   }
   addEditRowHandler(tr);
+  addRowClickHandler(table.rows.length - 1);
   addState = false;
   for (let field of fields) {
     field.value = null;

@@ -8,20 +8,22 @@
   </head>
   <body>
     <div class="container">
-      <h1>Chemical supplies</h1>
-      <div id="toolbar" class="m-3 d-flex justify-content-end">
-        <button type="button" class="btn btn-sm" id="add-btn">
-          <img src="public/database-add.svg" />
-        </button>
-        <button type="button" class="btn btn-sm">
-          <img src="public/arrow-up.svg" />
-        </button>
-        <button type="button" class="btn btn-sm">
-          <img src="public/arrow-down.svg" />
-        </button>
-        <button type="button" class="btn btn-sm">
-          <img src="public/trash.svg" />
-        </button>
+      <div class="d-flex justify-content-between">
+        <h1>Chemical supplies</h1>
+        <div id="toolbar" class="m-3 d-flex">
+          <button type="button" class="m-1 btn btn-sm" id="add-btn">
+            <img src="public/database-add.svg" />
+          </button>
+          <button type="button" class="m-1 btn btn-sm">
+            <img src="public/arrow-up.svg" />
+          </button>
+          <button type="button" class="m-1 btn btn-sm">
+            <img src="public/arrow-down.svg" />
+          </button>
+          <button type="button" class="m-1 btn btn-sm" id="delete-btn">
+            <img src="public/trash.svg" />
+          </button>
+        </div>
       </div>
       <div id="add-form" class="d-none">
         <input
@@ -87,5 +89,7 @@
     <script src="scripts/sortTable.js"></script>
     <script src="scripts/editRow.js"></script>
     <script src="scripts/addRow.js"></script>
+    <script src="scripts/deleteRow.js"></script>
+    <script src="scripts/moveRow.js"></script>
   </body>
 </html>

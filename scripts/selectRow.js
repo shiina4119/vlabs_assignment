@@ -14,6 +14,14 @@ function deselectRow(i) {
   document.querySelectorAll("tbody tr")[i].className = "";
 }
 
+function addRowClickHandler(i) {
+  let row = document.querySelectorAll("tbody tr")[i - 1];
+  console.log(row);
+  row.onclick = function () {
+    rowClickHandler(i - 1);
+  };
+}
+
 function addRowClickHandlers() {
   let rows = document.querySelectorAll("tbody tr");
   for (let i = 0; i < rows.length; i++) {
