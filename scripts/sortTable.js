@@ -21,28 +21,44 @@ function sortTable(n) {
       shouldSwitch = false;
       x = rows[i].getElementsByTagName("td")[n];
       y = rows[i + 1].getElementsByTagName("td")[n];
-      if (typeof Object.values(data[1])[n] == "string") {
+      if (editableFields.has(n)) {
+        x = x.childNodes[0];
+        y = y.childNodes[0];
         if (dir == "asc") {
-          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          if (Number(x.value) > Number(y.value)) {
             shouldSwitch = true;
             break;
           }
         } else if (dir == "desc") {
-          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          if (Number(x.value) < Number(y.value)) {
             shouldSwitch = true;
             break;
           }
         }
-      } else if (typeof Object.values(data[1])[n] == "number") {
-        if (dir == "asc") {
-          if (Number(x.innerHTML) > Number(y.innerHTML)) {
-            shouldSwitch = true;
-            break;
+      } else {
+        if (schema[n][0] == "string") {
+          if (dir == "asc") {
+            if (x.innerText.toLowerCase() > y.innerText.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerText.toLowerCase() < y.innerText.toLowerCase()) {
+              shouldSwitch = true;
+              break;
+            }
           }
-        } else if (dir == "desc") {
-          if (Number(x.innerHTML) < Number(y.innerHTML)) {
-            shouldSwitch = true;
-            break;
+        } else if (schema[n][0] == "number") {
+          if (dir == "asc") {
+            if (Number(x.innerHTML) > Number(y.innerHTML)) {
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (Number(x.innerHTML) < Number(y.innerHTML)) {
+              shouldSwitch = true;
+              break;
+            }
           }
         }
       }
@@ -57,27 +73,9 @@ function sortTable(n) {
         switching = true;
       }
     }
-    // if (dir == "asc") {
-    //   data.sort(function (a, b) {
-    //     let x = a[schema[n][1]];
-    //     let y = b[schema[n][1]];
-    //     if (x < y) return -1;
-    //     else if (x > y) return 1;
-    //     else return 0;
-    //   });
-    // } else {
-    //   data.sort(function (a, b) {
-    //     let x = a[schema[n][1]];
-    //     let y = b[schema[n][1]];
-    //     if (x > y) return -1;
-    //     else if (x < y) return 1;
-    //     else return 0;
-    //   });
-    // }
-    // addEditButtonHandlers(data.length);
-    // addDeleteButtonHandlers(data.length);
   }
   addRowClickHandlers();
+  addEditRowHandlers();
 }
 
 let tableHeaders = document.getElementsByTagName("th");

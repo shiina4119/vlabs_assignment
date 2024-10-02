@@ -26,23 +26,18 @@ function createTable(data) {
     let tr = document.createElement("tr");
     let rowValues = Object.values(row);
 
-    rowValues.forEach((value) => {
+    rowValues.forEach((value, i) => {
       let td = document.createElement("td");
-      td.innerText = value;
+      if (editableFields.has(i)) {
+        let input = document.createElement("input");
+        input.className = "form-control form-control-sm";
+        input.style.width = "8em";
+        input.type = "number";
+        input.value = Number(value);
+        td.appendChild(input);
+      } else td.innerText = value;
       tr.appendChild(td);
     });
-    // let td = document.createElement("td");
-    // let editBtn = document.createElement("button");
-    // editBtn.className = "edit-btn btn btn-sm btn-primary mx-1";
-    // editBtn.innerText = "Edit";
-    // editBtn.style.width = "4em";
-    // let deleteBtn = document.createElement("button");
-    // deleteBtn.className = "delete-btn btn btn-sm btn-danger mx-1";
-    // deleteBtn.innerText = "Delete";
-    // editBtn.style.width = "4em";
-    // td.appendChild(editBtn);
-    // td.appendChild(deleteBtn);
-    // tr.appendChild(td);
     tbody.appendChild(tr);
   });
   table.appendChild(tbody);

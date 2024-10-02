@@ -91,3 +91,8 @@ let schema = [
   ["string", "Kg"],
   ["number", "Quantity"],
 ];
+
+let editableFields = new Set();
+editableFields.add(3);
+editableFields.add(4);
+editableFields.add(8);

@@ -7,12 +7,11 @@ function rowClickHandler(i) {
   }
   selectedRow = i;
   rows[selectedRow].className = "table-info";
-  console.log(`Row ${i} selected`);
 }
 
 function deselectRow(i) {
-  let rows = document.querySelectorAll("tbody tr");
-  rows[i].className = "";
+  if (i == -1) return;
+  document.querySelectorAll("tbody tr")[i].className = "";
 }
 
 function addRowClickHandlers() {
